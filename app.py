@@ -55,9 +55,11 @@ def predict():
     
     
     if bat_team=="none" :
-        return render_template('index1.html',prediction_text="PLEASE!ENTER BATTING TEAM")
+        return render_template('index1.html',prediction_text="PLEASE! ENTER BATTING TEAM")
     elif bowl_team=="none":
-        return render_template('index1.html',prediction_text="PLEASE!ENTER BOWLING TEAM")
+        return render_template('index1.html',prediction_text="PLEASE! ENTER BOWLING TEAM")
+    elif bat_team==bowl_team:
+        return render_template('index1.html',prediction_text="BATTING and BOWLING TEAM CANNOT BE SAME !")
     else:
         output=int(model.predict([temp_array])[0])
         return render_template('index1.html',prediction_text="TARGET : {} - {}. ".format(output-5,output+10))
