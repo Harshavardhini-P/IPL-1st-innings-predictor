@@ -60,6 +60,8 @@ def predict():
         return render_template('index1.html',prediction_text="PLEASE! ENTER BOWLING TEAM")
     elif bat_team==bowl_team:
         return render_template('index1.html',prediction_text="BATTING and BOWLING TEAM CANNOT BE SAME !")
+    elif overs<=5:
+        return render_template('index1.html',prediction_text="ENTER OVERS GREATER THAN 5 !"
     else:
         output=int(model.predict([temp_array])[0])
         return render_template('index1.html',prediction_text="TARGET : {} - {}. ".format(output-5,output+10))
