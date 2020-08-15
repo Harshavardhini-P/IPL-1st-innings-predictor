@@ -60,7 +60,7 @@ def predict():
         return render_template('index1.html',prediction_text="PLEASE!ENTER BOWLING TEAM")
     else:
         output=int(model.predict([temp_array])[0])
-        return render_template('index1.html',prediction_text="TARGET : {} - {}. ".format(output-10,output+5))
+        return render_template('index1.html',prediction_text="TARGET : {} - {}. ".format(output-5,output+10))
         
     
 
