@@ -8,25 +8,37 @@
 <body >
   <style media="screen">
     body{
-      background-image:linear-gradient(red,black);
-      background-size:stretch;
+      background-color:black;
     }
+    
+    
+    
     div{
-      width:600px;
-      margin-top:10px;
-      margin-left:350px;;
-      margin-right:100px;
-      height=100%;
+      border:10px ;
+      max-width:700px;
+      margin:auto;
+      height:15vh;
+      display:flex;
+      align-items:centre;
+      justify-content:centre;
     }
+    
   </style>
-
+<section>
  <div class=".my-container justify-content-center" >
    <center >
      <h1 style="color:white">IPL score - ML</h1>
+     <h6>Modelled by <a href="https://www.instagram.com/joshsusinth/">JOSH SUSINTH </a></h4>
+    <h6> Designed by <a href="https://www.instagram.com/_.the.mishra._/">SAURABH MISHRA</a></h4>
+    <br>
+     
      </center>  </div>
+     
 
+<br>
      <!-- Main Input For Receiving Query to our ML -->
     <div class="my-container justify-content-center form-group">
+    
     <form action="{{ url_for('predict') }}" method="post">
         	    <select id="bat_team" name="bat_team" class="form-control">
         	    <option value="none">--BATTING TEAM--</option>
@@ -73,8 +85,12 @@
     </form>
         </div>
 <div class="container">
-  <h4>Modelled by <a href="https://www.instagram.com/joshsusinth/">JOSH SUSINTH</a></h4>
-  <h4>Designed by <a href="https://www.instagram.com/_.the.mishra._/">SAURABH MISHRA</a></h4>
+  
 </div>
+
+
+
+</section>
+
 </body>
  </html>
