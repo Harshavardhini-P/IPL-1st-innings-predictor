@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset ="UTF-8">
+<head >
+	<meta charset ="UTF-8" >
 	<title> IPL Score_Predict </title>
-	<link href='https://fonts.googleapis.com/cc?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/cc?family=Arimo' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/cc?family=Hind:300' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/cc?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<body >
+  <style media="screen">
+    body{
+      background-image:linear-gradient(red,black);
+    }
+    div{
+      width:600px;
+      margin-top:10px;
+      margin-left:350px;
+      margin-right:100px;
+      height=100%;
+    }
+  </style>
 
-<body>
- <div class="login">
-	<h1>IPL score - ML</h1>
+ <div class=".my-container justify-content-center" >
+   <center >
+     <h1 style="color:white">IPL score - ML</h1>
+     </center>  </div>
 
      <!-- Main Input For Receiving Query to our ML -->
+    <div class="my-container justify-content-center form-group">
     <form action="{{ url_for('predict') }}" method="post">
-        	    <select id="bat_team" name="bat_team">
+        	    <select id="bat_team" name="bat_team" class="form-control">
         	    <option value="none">--BATTING TEAM--</option>
                 <option value="csk">Chennai Super Kings</option>
                 <option value="rcb">Royal Challengers Bangalore</option>
@@ -28,8 +38,9 @@
                 <option value="dd">Delhi Daredevils</option>
                 <option value="kkr">Kolkata Knight Riders</option>
               </select>
+              
               <label for="bowl_team"></label>
-              <select id="bowl_team" name="bowl_team">
+              <select id="bowl_team" name="bowl_team" class="form-control">
                 <option value="none">--BOWLING TEAM--</option>
                 <option value="csk">Chennai Super Kings</option>
                 <option value="rcb">Royal Challengers Bangalore</option>
@@ -40,16 +51,29 @@
                 <option value="dd">Delhi Daredevils</option>
                 <option value="kkr">Kolkata Knight Riders</option>
               </select>
+              <br>
               <input type="text" name="Current Score" placeholder="Current Score" required="required" class="form-control">
+              <br>
               <input type="text" name="Wickets" placeholder="Wickets Gone" required="required" class="form-control">
+              <br>
               <input type="text" name="Overs" placeholder="Overs Completed" required="required" class="form-control">
+              <br>
               <input type="text" name="last_5_runs" placeholder="Last 5 Overs Run" required="required" class="form-control">
+              <br>
               <input type="text" name="Last 5 Overs Wicket" placeholder="Last 5 Overs Wicket" required="required" class="form-control">
-              <input type="submit" name="predict" placeholder="Predict" class="form-control">          
-    </form> 
-
-   <br>
-   <br>
-   {{ prediction_text }}
-
- </div>
+              <br>
+              <center><input type="submit" class="btn btn-danger" name="predict" placeholder="Predict"></center>
+              <br>
+              
+              
+                 <h3 style="color:white">{{ prediction_text }}</h3>
+                 
+                    
+    </form>
+        </div>
+<div class="container">
+  <h4>Modelled by <a href="https://www.instagram.com/joshsusinth/">JOSH SUSINTH</a></h4>
+  <h4>Designed by <a href="https://www.instagram.com/_.the.mishra._/">SAURABH MISHRA</a></h4>
+</div>
+</body>
+ </html>
